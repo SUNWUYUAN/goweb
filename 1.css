@@ -48,7 +48,7 @@ body{
     justify-content: center;
     align-items: center;
     /* 渐变背景 */
-    background: linear-gradient(200deg,#4F6DEE,#67BDF9);
+    background: linear-gradient(200deg,#4f6cee98,#67bcf99a);
     /* 将元素剪切为一个圆形(30px表示圆的半径, 50% 50%表示圆心的位置) */
     clip-path: circle(30px at 50% 50%);
     /* 设置过渡 */
