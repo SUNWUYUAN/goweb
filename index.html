@@ -7,11 +7,38 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://goweb.tk/1.css">
-
+    <link rel="stylesheet" href="1.css">
 
 </head>
+
 <body>
+    <div id="he-plugin-simple"></div>
+    <script>
+        WIDGET = {
+            "CONFIG": {
+                "modules": "01234",
+                "background": "5",
+                "tmpColor": "FFFFFF",
+                "tmpSize": "16",
+                "cityColor": "FFFFFF",
+                "citySize": "16",
+                "aqiColor": "FFFFFF",
+                "aqiSize": "16",
+                "weatherIconSize": "24",
+                "alertIconSize": "18",
+                "padding": "10px 10px 10px 10px",
+                "shadow": "0",
+                "language": "auto",
+                "fixed": "true",
+                "vertical": "top",
+                "horizontal": "left",
+                "left": "10",
+                "bottom": "10",
+                "key": "f64252572dc24440b3f8800b008edf96"
+            }
+        }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
 
     <body background="https://www.retiehe.com/backend/bing/1080p"></body>
     <div id="clickCanvas" style=" position:fixed;left:0;top:0;z-index:999999999;pointer-events:none;"></div>
@@ -22,15 +49,18 @@
     <label for="search_btn" class="close-btn">
         <i class="fa fa-close" aria-hidden="true"></i>
     </label>
+
+
     <div class="container">
         <div class="search-box">
-            <input type="test" id="searchInput" placeholder="请输入搜索内容" onkeydown="entersearch()">
-            <i class="fa fa-search" aria-hidden="true" button onclick="to()"></i>
+            <input type="test" id="searchInput" placeholder="请输入搜索内容" onkeydown="enter()">
+            <i class="fa fa-search" aria-hidden="true" button onclick="click()"></i>
         </div>
     </div>
+
 </body>
 <script>
-    function entersearch() {
+    function enter() {
         var event = window.event || arguments.callee.caller.arguments[0];
         if (event.keyCode == 13) {
             var searchValue = document.getElementById("searchInput").value;
@@ -38,7 +68,7 @@
             window.location.href = "http://www.baidu.com/s?ie=UTF-8&wd=" + searchValue;
         }
     }
-    function to() {
+    function click() {
         var searchValue = document.getElementById("searchInput").value;
         // alert(searchValue);
         window.location.href = "http://www.baidu.com/s?ie=UTF-8&wd=" + searchValue;
@@ -146,4 +176,5 @@
         });
     }
 </script>
+
 </html>
