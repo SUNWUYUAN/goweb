@@ -7,7 +7,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="1.css">
+  
 
 </head>
 
@@ -65,13 +65,13 @@
         if (event.keyCode == 13) {
             var searchValue = document.getElementById("searchInput").value;
             // alert(searchValue);
-            window.location.href = "http://www.baidu.com/s?ie=UTF-8&wd=" + searchValue;
+            window.location.href = "https://www.baidu.com/s?ie=utf-8&word=" + searchValue;
         }
     }
     function click() {
         var searchValue = document.getElementById("searchInput").value;
         // alert(searchValue);
-        window.location.href = "http://www.baidu.com/s?ie=UTF-8&wd=" + searchValue;
+        window.location.href = "https://www.baidu.com/s?ie=utf-8&word=" + searchValue;
     }
     //标题栏变化
     var OriginTitile = document.title;
@@ -82,7 +82,7 @@
             clearTimeout(st);
             console.log('hide');
         } else {
-            document.title = '(*´∇｀*)  被你发现啦~ ' + OriginTitile;
+            document.title = '(*´∇｀*) 被你发现啦~ ' + OriginTitile;
             console.log('show');
             st = setTimeout(function () {
                 document.title = OriginTitile;
