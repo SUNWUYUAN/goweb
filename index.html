@@ -7,7 +7,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  
+
 
 </head>
 
@@ -16,7 +16,7 @@
     <script>
         WIDGET = {
             "CONFIG": {
-                "modules": "01234",
+                "modules": "0123",
                 "background": "5",
                 "tmpColor": "FFFFFF",
                 "tmpSize": "16",
@@ -53,7 +53,7 @@
 
     <div class="container">
         <div class="search-box">
-            <input type="test" id="searchInput" placeholder="请输入搜索内容" onkeydown="enter()">
+            <input type="test" id="searchInput" class='searchInput' placeholder="请输入搜索内容" onkeydown="enter()">
             <i class="fa fa-search" aria-hidden="true" button onclick="click()"></i>
         </div>
     </div>
@@ -178,175 +178,141 @@
 </script>
 <style>
     * {
-    margin: 0;
-    padding: 0
-}
-
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-
-.search-btn {
-    position: relative;
-    z-index: 1;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    cursor: pointer
-}
-
-.search-btn .fa {
-    color: #fff;
-    font-size: 22px
-}
-
-.close-btn {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    z-index: 1;
-    font-size: 25px;
-    color: #fff;
-    cursor: pointer;
-    display: none
-}
-
-.container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: bgAnimation 15s linear infinite;
-    background-size: 500%;
-    clip-path: circle(30px at 50% 50%);
-    transition: .4s
-}
-
-@keyframes bgAnimation {
-    0% {
-        background-position: 0% 50%
+        margin: 0;
+        padding: 0
     }
 
-    50% {
-        background-position: 100% 50%
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center
     }
 
-    100% {
-        background-position: 0% 50%
+    .search-btn {
+        position: relative;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        cursor: pointer
     }
-}
 
-.search-box {
-    width: 0;
-    height: 50px;
-    display: flex;
-    border-bottom: 3px solid #fff;
-    overflow: hidden;
-    transition: .3s
-}
+    .search-btn .fa {
+        color: #fff;
+        font-size: 22px
+    }
 
-.search-box input {
-    width: 100%;
-    height: 50px;
-    border: none;
-    background: 0 0;
-    outline: none;
-    color: #fff;
-    font-size: 22px;
-    text-indent: 8px
-}
+    .close-btn {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        z-index: 1;
+        font-size: 25px;
+        color: #fff;
+        cursor: pointer;
+        display: none
+    }
 
-.search-box input::placeholder {
-    color: rgba(255, 255, 255, .7)
-}
+    .container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: bgAnimation 15s linear infinite;
+        background-size: 500%;
+        clip-path: circle(30px at 50% 50%);
+        transition: .6s
+    }
 
-.search-box .fa {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer
-}
+    @keyframes bgAnimation {
+        0% {
+            background-position: 0% 50%
+        }
 
-#search_btn:checked~.search-btn {
-    display: none
-}
+        50% {
+            background-position: 100% 50%
+        }
 
-#search_btn:checked~.close-btn {
-    display: block
-}
+        100% {
+            background-position: 0% 50%
+        }
+    }
 
-#search_btn:checked~.container {
-    clip-path: circle(100%)
-}
+    .search-box {
+        width: 0;
+        height: 50px;
+        display: flex;
+        border-bottom: 3px solid #fff;
+        overflow: hidden;
+        transition: .3s
+    }
 
-#search_btn:checked~.container .search-box {
-    width: 400px
-}
+    .search-box input {
+        width: 100%;
+        height: 50px;
+        border: none;
+        background: 0 0;
+        outline: none;
+        color: #fff;
+        font-size: 22px;
+        text-indent: 8px
+    }
 
+    .search-box input::placeholder {
+        color: rgba(255, 255, 255, .7)
+    }
 
+    .search-box .fa {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer
+    }
 
+    #search_btn:checked~.search-btn {
+        display: none
+    }
 
+    #search_btn:checked~.close-btn {
+        display: block
+    }
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+    #search_btn:checked~.container {
+        clip-path: circle(100%)
+    }
 
-:root {
-    font-size: 15px;
-}
-
-.container {
-    font-family: 'Quicksand', sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    background-color: #e493d0;
-    background-image:
-        radial-gradient(closest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
-        radial-gradient(closest-side, rgba(243, 11, 164, 1), rgba(243, 11, 164, 0)),
-        radial-gradient(closest-side, rgba(254, 234, 131, 1), rgba(254, 234, 131, 0)),
-        radial-gradient(closest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
-        radial-gradient(closest-side, rgba(248, 192, 147, 1), rgba(248, 192, 147, 0));
-    background-size:
-        130vmax 130vmax,
-        80vmax 80vmax,
-        90vmax 90vmax,
-        110vmax 110vmax,
-        90vmax 90vmax;
-    background-position:
-        -80vmax -80vmax,
-        60vmax -30vmax,
-        10vmax 10vmax,
-        -30vmax -10vmax,
-        50vmax 50vmax;
-    background-repeat: no-repeat;
-    animation: 10s movement linear infinite;
-}
-
-.container {
-    content: '';
-
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
+    #search_btn:checked~.container .search-box {
+        width: 400px
+    }
 
 
 
-@keyframes movement {
 
-    0%,
-    100% {
+
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+    :root {
+        font-size: 15px;
+    }
+
+    .container {
+        font-family: 'Quicksand', sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        background-color: #e493d0;
+        background-image:
+            radial-gradient(closest-side, rgba(235, 105, 78, 1), rgba(235, 105, 78, 0)),
+            radial-gradient(closest-side, rgba(243, 11, 164, 1), rgba(243, 11, 164, 0)),
+            radial-gradient(closest-side, rgba(254, 234, 131, 1), rgba(254, 234, 131, 0)),
+            radial-gradient(closest-side, rgba(170, 142, 245, 1), rgba(170, 142, 245, 0)),
+            radial-gradient(closest-side, rgba(248, 192, 147, 1), rgba(248, 192, 147, 0));
         background-size:
             130vmax 130vmax,
             80vmax 80vmax,
@@ -359,56 +325,232 @@ body {
             10vmax 10vmax,
             -30vmax -10vmax,
             50vmax 50vmax;
+        background-repeat: no-repeat;
+        animation: 10s movement linear infinite;
     }
 
-    25% {
-        background-size:
-            100vmax 100vmax,
-            90vmax 90vmax,
-            100vmax 100vmax,
-            90vmax 90vmax,
-            60vmax 60vmax;
-        background-position:
-            -60vmax -90vmax,
-            50vmax -40vmax,
-            0vmax -20vmax,
-            -40vmax -20vmax,
-            40vmax 60vmax;
+    .container {
+        content: '';
+
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 
-    50% {
-        background-size:
-            80vmax 80vmax,
-            110vmax 110vmax,
-            80vmax 80vmax,
-            60vmax 60vmax,
-            80vmax 80vmax;
-        background-position:
-            -50vmax -70vmax,
-            40vmax -30vmax,
-            10vmax 0vmax,
-            20vmax 10vmax,
-            30vmax 70vmax;
+
+
+    @keyframes movement {
+
+        0%,
+        100% {
+            background-size:
+                130vmax 130vmax,
+                80vmax 80vmax,
+                90vmax 90vmax,
+                110vmax 110vmax,
+                90vmax 90vmax;
+            background-position:
+                -80vmax -80vmax,
+                60vmax -30vmax,
+                10vmax 10vmax,
+                -30vmax -10vmax,
+                50vmax 50vmax;
+        }
+
+        25% {
+            background-size:
+                100vmax 100vmax,
+                90vmax 90vmax,
+                100vmax 100vmax,
+                90vmax 90vmax,
+                60vmax 60vmax;
+            background-position:
+                -60vmax -90vmax,
+                50vmax -40vmax,
+                0vmax -20vmax,
+                -40vmax -20vmax,
+                40vmax 60vmax;
+        }
+
+        50% {
+            background-size:
+                80vmax 80vmax,
+                110vmax 110vmax,
+                80vmax 80vmax,
+                60vmax 60vmax,
+                80vmax 80vmax;
+            background-position:
+                -50vmax -70vmax,
+                40vmax -30vmax,
+                10vmax 0vmax,
+                20vmax 10vmax,
+                30vmax 70vmax;
+        }
+
+        75% {
+            background-size:
+                90vmax 90vmax,
+                90vmax 90vmax,
+                100vmax 100vmax,
+                90vmax 90vmax,
+                70vmax 70vmax;
+            background-position:
+                -50vmax -40vmax,
+                50vmax -30vmax,
+                20vmax 0vmax,
+                -10vmax 10vmax,
+                40vmax 60vmax;
+        }
     }
 
-    75% {
-        background-size:
-            90vmax 90vmax,
-            90vmax 90vmax,
-            100vmax 100vmax,
-            90vmax 90vmax,
-            70vmax 70vmax;
-        background-position:
-            -50vmax -40vmax,
-            50vmax -30vmax,
-            20vmax 0vmax,
-            -10vmax 10vmax,
-            40vmax 60vmax;
+    .search-box {
+        transition: all .5s ease .1s;
     }
-}
+
+    .search-box:hover {
+        transform: scale(1.1);
+    }
+
+    .close-btn {
+        transition: all .5s ease .1s;
+    }
+
+    .close-btn:hover {
+        transform: scale(1.2);
+    }
+
+    .search-btn {
+        transition: all .5s ease .1s;
+    }
+
+    .search-btn:hover {
+        transform: scale(1.2);
+    }
 
 
 
+
+
+    #weather-view-he {
+        height: 285px !important;
+        padding: 10px !important;
+        border-radius: 10px !important;
+        background-color: var(--bg-w-pure) !important;
+        box-shadow: rgba(0, 0, 0, .1) 0 0 20px
+
+    }
+
+
+    .wv-lt-location,
+    .wv-lt-refresh {
+        display: inline-block
+    }
+
+    .wv-lt-location a {
+        padding: 0 5px;
+        border-radius: 3px;
+        color: var(--theme-color) !important;
+        background-color: var(--theme-color-tint);
+        text-decoration: none !important
+        
+    }
+
+    .wv-lt-col-5 {
+        text-align: right
+    }
+
+    .wv-lt-refresh a {
+        font-size: 0 !important
+    }
+
+    .wv-lt-refresh a::after {
+        content: "和风天气";
+        font-size: small !important
+    }
+
+    .vw-f-cell a,
+    .wv-n-h-now-rain-text,
+    .wv-n-h-now-tmp span,
+    .wv-n-h-now-txt span,
+    .wv-n-h-now-txt-t {
+        color: var(--txt-b-pure) !important
+    }
+
+    .wv-f-table div .vw-f-cell:nth-child(1) a {
+        color: #9b9b9b !important
+    }
+
+    .wv-top-backdrop {
+        height: 285px !important;
+        padding-top: 50px !important
+    }
+
+    .wv-top-backdrop::after {
+        content: "请选择" !important;
+        padding-left: 5%
+    }
+
+    .wv-top-button,
+    .wv-top-select {
+        height: 36px !important;
+        border: none !important;
+        border-radius: 5px !important;
+        cursor: pointer;
+        transition: .25s
+    }
+
+    .wv-top-select {
+        padding-left: 10px !important
+    }
+
+    .wv-top-button {
+        background-color: var(--theme-color) !important;
+        color: #fff !important 
+        --fonts-light:"Microsoft Yahei Light", "Microsoft Yahei", "PingFang SC", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+        --fonts-regular: "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft Yahei", sans-serif;
+        --cubic-bezier: cubic-bezier(0.65, 0.05, 0.1, 1);
+        --body-top: 0px;
+        color-scheme: dark;
+        --w-alpha-60: rgba(30, 30, 30, .6);
+        --theme-color: #5CA1FF;
+        --theme-color-hover: #5390E6;
+        --theme-color-active: #4578BF;
+        --theme-color-tint: rgba(92, 161, 255, 0.1);
+        --selection-color: rgba(92, 161, 255, 0.35);
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        pointer-events: unset;
+        -webkit-font-smoothing: antialiased;
+        touch-action: pan-y;
+        height: 36px !important;
+        border: none !important;
+        border-radius: 5px !important;
+        cursor: pointer;
+        transition: .25s;
+        background-color: var(--theme-color) !important;
+        color: #fff !important;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        font-size: 1.2em;
+        width: 90%;
+        box-shadow: none;
+        text-align: center;
+
+    }
+
+    .wv-top-button:hover {
+        background-color: var(--theme-color-hover) !important
+    }
+
+    .wv-top-button:active {
+        background-color: var(--theme-color-active) !important
+    }
 </style>
 
 
